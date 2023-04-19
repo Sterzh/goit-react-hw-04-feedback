@@ -1,15 +1,12 @@
-import css from './Statistics.module.css';
+import Section from '../Section';
+import FeedbackOptions from '../FeedbackOptions';
 
 const Statistics = (good, neutral, bad, total, positivePercentage) => {
-  console.log(good, neutral, bad, total, positivePercentage);
+  const title = '123';
+
   return (
     <>
-      <h2 className={css.title}>Statistics</h2>
-      {/* <span className={css.label}>{good}</span>
-      <span className={css.label}>{neutral}</span>
-      <span className={css.percentage}>{bad}</span>
-      <span className={css.percentage}>{total}</span>
-      <span className={css.percentage}>{positivePercentage}</span> */}
+      <Section title={title}></Section>
     </>
   );
 };
