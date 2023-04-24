@@ -12,34 +12,16 @@ export class App extends Component {
   };
 
   handleIncrement = buttonClickName => {
-    if (buttonClickName === 'good') {
-      this.setState(
-        prevState => ({
-          buttons: { ...prevState.buttons, good: prevState.buttons.good + 1 },
-        }),
-        this.countTotalFeedback,
-        this.countPositiveFeedbackPercentage
-      );
-    } else if (buttonClickName === 'neutral') {
-      this.setState(
-        prevState => ({
-          buttons: {
-            ...prevState.buttons,
-            neutral: prevState.buttons.neutral + 1,
-          },
-        }),
-        this.countTotalFeedback,
-        this.countPositiveFeedbackPercentage
-      );
-    } else {
-      this.setState(
-        prevState => ({
-          buttons: { ...prevState.buttons, bad: prevState.buttons.bad + 1 },
-        }),
-        this.countTotalFeedback,
-        this.countPositiveFeedbackPercentage
-      );
-    }
+    this.setState(
+      prevState => ({
+        buttons: {
+          ...prevState.buttons,
+          [buttonClickName]: prevState.buttons[buttonClickName] + 1,
+        },
+      }),
+      this.countTotalFeedback,
+      this.countPositiveFeedbackPercentage
+    );
   };
 
   countTotalFeedback = () => {

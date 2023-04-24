@@ -1,12 +1,14 @@
-// import css from './FeedbackOptions.module.css';
+import PropTypes from 'prop-types';
+import css from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
-      <div>
+      <div className={css.buttonsContainer}>
         {options.map(option => {
           return (
             <button
+              className={css.buttons}
               key={option}
               type="button"
               onClick={() => onLeaveFeedback(option)}
@@ -21,3 +23,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 export default FeedbackOptions;
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.array.isRequired,
+};
